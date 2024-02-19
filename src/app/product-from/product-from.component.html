@@ -1,0 +1,45 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="handelSubmit(form)" class="my-4 flex flex-column gap-5">
+    <!-- <input type="text" pInputText [(ngModel)]="selectedProduct.code" />
+    <input type="text" pInputText [(ngModel)]="selectedProduct.name" />
+    <input type="text" pInputText [(ngModel)]="selectedProduct.category" />
+    <input type="text" pInputText [(ngModel)]="selectedProduct.quantity" /> -->
+    <ng-container *ngIf="docKey">
+        <span class="p-float-label">
+            <input type="text" pInputText formControlName="id" name="id" readonly />
+            <label for="id">id</label>
+        </span>
+    </ng-container>
+    <span class="p-float-label">
+        <input type="text" pInputText formControlName="name" name="name" />
+        <label for="name">name</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText formControlName="category" name="category" />
+        <label for="category">category</label>
+    </span>
+    <span class="p-float-label">
+        <input type="text" pInputText formControlName="quantity" name="quantity" />
+        <label for="quantity">quantity</label>
+    </span>
+
+    <div class="flex flex-row gap-5">
+        <ng-container *ngIf="docKey">
+            <button pButton type="button" label="Delete" (click)="handelDelete(docKey)"></button>
+        </ng-container>
+
+        <button pButton type="submit" label="{{docKey ? 'UPDATE' : 'ADD'}}"
+            [disabled]="form.pristine || form.invalid"></button>
+
+    </div>
+</form>
+
+<p>Form State:</p>
+<ul>
+    <li>Dirty: {{ form.dirty }}</li>
+    <li>Pristine: {{ form.pristine }}</li>
+    <li>Touched: {{ form.touched }}</li>
+    <li>Untouched: {{ form.untouched }}</li>
+    <li>Valid: {{ form.valid }}</li>
+    <li>Invalid: {{ form.invalid }}</li>
+
+</ul>
