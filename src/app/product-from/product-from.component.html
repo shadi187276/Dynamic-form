@@ -1,8 +1,4 @@
 <form *ngIf="form" [formGroup]="form" (ngSubmit)="handelSubmit(form)" class="my-4 flex flex-column gap-5">
-    <!-- <input type="text" pInputText [(ngModel)]="selectedProduct.code" />
-    <input type="text" pInputText [(ngModel)]="selectedProduct.name" />
-    <input type="text" pInputText [(ngModel)]="selectedProduct.category" />
-    <input type="text" pInputText [(ngModel)]="selectedProduct.quantity" /> -->
     <ng-container *ngIf="docKey">
         <span class="p-float-label">
             <input type="text" pInputText formControlName="id" name="id" readonly />

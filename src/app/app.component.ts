@@ -10,6 +10,8 @@ import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { ProductFromComponent } from './product-from/product-from.component';
+import { AbcComponent } from './abc/abc.component';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +23,8 @@ import { ProductFromComponent } from './product-from/product-from.component';
     CommonModule,
     DialogModule,
     ProductFromComponent,
+    InputTextModule,
+    AbcComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
